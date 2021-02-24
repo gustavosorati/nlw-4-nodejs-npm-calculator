@@ -1,15 +1,10 @@
+import "reflect-metadata";
 import express from 'express';
+import './database/index';
+import { router } from "./routes";
+
 const app = express();
-const routes = express.Router();
-
-app.use(routes);
-
-app.get('/', (req, res) => {
-    res.send("Olá mundo")
-})
-
-app.post('/', (req, res) => {
-    res.send("Olá mundo")
-})
+app.use(express.json());
+app.use(router);
 
 app.listen(3000);
