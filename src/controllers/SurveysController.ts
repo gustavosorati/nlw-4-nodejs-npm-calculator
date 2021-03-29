@@ -8,7 +8,7 @@ class SurveysController {
 
         const surveysRepository = getCustomRepository(SurveysRepository);
 
-        const survey = surveysRepository.create( { title, description});
+        const survey = surveysRepository.create({ title, description});
 
         await surveysRepository.save(survey);
 
